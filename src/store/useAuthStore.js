@@ -7,6 +7,7 @@ export const useAuthStore = create((set) => ({
   isSigningUp: false,
   isLoggingIn: false,
   isUpdatingProfile: false,
+  onlineUsers: [],
 
   isCheckingAuth: true,
 
@@ -69,7 +70,7 @@ export const useAuthStore = create((set) => ({
       toast.success("Profile updated successfully");
     } catch (error) {
       console.log("Error in update profile", error);
-      toast.error("Error in uupdate profile");
+      toast.error("Error in update profile");
     } finally {
       set({ isUpdatingProfile: false });
     }
